@@ -1,5 +1,5 @@
 FROM php:7.2.17-fpm-alpine3.8
-LABEL maintainer="美人易逝 <1036853357@qq.com>" version="1.0"
+LABEL maintainer="美人易逝 <123456@qq.com>" version="1.0"
 ENV SWOOLE_VERSION=4.1.2 \
     REDIS_VERSION=4.0.2
 
