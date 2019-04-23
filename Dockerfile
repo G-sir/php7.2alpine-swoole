@@ -3,6 +3,8 @@ LABEL maintainer="美人易逝 <123456@qq.com>" version="1.0"
 ENV SWOOLE_VERSION=4.1.2 \
     REDIS_VERSION=4.0.2
 
+COPY php.ini /usr/local/etc/php/
+
 #Timezone and lib
 RUN apk add -U tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
@@ -28,6 +30,8 @@ RUN set -ex \
         && docker-php-ext-enable redis \
         # php extension: pdo_mysql
         && docker-php-ext-install pdo_mysql \
+	# php extension: opcache
+	#&& docke-php-ext-install opcache \
         # php extension: bcmath
         && docker-php-ext-install bcmath \
         # php extension: swoole
